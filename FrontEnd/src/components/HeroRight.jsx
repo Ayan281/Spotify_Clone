@@ -19,7 +19,7 @@ const HeroRight = ({ showPlaylist, artist, setArtist, inpt , setCurrentSong}) =>
   //Real Backend API Call
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/music/")
+      .get("https://spotify-clone-dz95.onrender.com/api/music/")
       .then((res) => {
         setSongs(res.data.musics);
         console.log(res.data);
