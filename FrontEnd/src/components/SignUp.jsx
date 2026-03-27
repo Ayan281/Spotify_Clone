@@ -14,7 +14,7 @@ const SignUp = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/auth/register", {
+      .post("https://spotify-clone-dz95.onrender.com/api/auth/register", {
         email,
         username,
         role,
