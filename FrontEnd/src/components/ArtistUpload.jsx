@@ -6,7 +6,7 @@ const ArtistUpload = () => {
     function submitHandler(e){
         e.preventDefault();
         const formData = new FormData(e.target);
-        axios.post("http://localhost:5000/api/music/upload", formData, {
+        axios.post("https://spotify-clone-dz95.onrender.com/api/music/upload", formData, {
             withCredentials: true,
         }).
         then((res)=>{
