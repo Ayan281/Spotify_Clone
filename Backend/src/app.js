@@ -9,10 +9,18 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://spotify-clone-gules-mu.vercel.app"
-  ],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (
+      origin.includes("vercel.app") ||
+      origin.includes("localhost")
+    ) {
+      return callback(null, true);
+    }
+
+    callback(new Error("Not allowed by CORS"));
+  },
   credentials: true
 }));
 app.use(express.json());
