@@ -9,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
    function submitHandler(e){
     e.preventDefault();
-    axios.post("http://localhost:5000/api/auth/login",{
+    axios.post("https://spotify-clone-dz95.onrender.com/api/auth/login",{
       username :nameoremail,
       email :nameoremail,
       password},{withCredentials : true}
